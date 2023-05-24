@@ -80,3 +80,8 @@ void pop(stack_t **head, unsigned int index)
 	*head = current;
 }
 
+void nop(stack_t **stack, unsigned int n)
+{
+	(void)(stack);
+	(void)(n);
+}

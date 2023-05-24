@@ -72,6 +72,7 @@ void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **head, unsigned int index);
 void (*get_opcode(arguments_t *args))(stack_t **, unsigned int);
 void free_stack(stack_t *head);
+void nop(stack_t **stack, unsigned int n);
 
 
 #endif
