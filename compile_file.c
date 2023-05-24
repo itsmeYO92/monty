@@ -17,7 +17,7 @@ int get_command(arguments_t *args)
 	char *data;
 
 	args->command = strtok(args->buffer, " \n\t");
-	if (args->command == NULL)
+	if (args->command == NULL || args->command[0] == '#')
 		return (0);
 
 	if (strcmp(args->command, "push") == 0)
