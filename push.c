@@ -19,19 +19,16 @@ stack_t *push(stack_t **head, const int n)
 
 
 
-size_t pall(const stack_t *h)
+void pall(stack_t **h, unsigned int line_number)
 {
-	int i = 0;
-	const stack_t *current;
+	stack_t *current;
 
-	if (!h)
-		return (0);
-	current = h;
+	if (!h || *h == NULL)
+		return;
+	current = *h;
 	while (current)
 	{
 		printf("%d\n", current->n);
-		i++;
 		current = current->next;
 	}
-	return (i);
 }

@@ -7,9 +7,9 @@ void compile_file(arguments_t *args)
 	{
 		if (get_command(args) == 0)
 			continue;
+		get_opcode(args)(&(args->stack), args->line);
 		args->line++;
 	}
-	pall(args->stack);
 }
 
 int get_command(arguments_t *args)

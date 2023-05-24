@@ -7,7 +7,7 @@ int main(int ac, char **av)
 	init_args(args, ac, av);
 	precheck_args(args);
 	compile_file(args);
-	printf("done");
+	free_stack(args->stack);
 	free(args->buffer);
 	fclose(args->source);
 	free(args);
