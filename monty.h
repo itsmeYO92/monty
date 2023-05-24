@@ -50,7 +50,7 @@ typedef struct instruction_s
 typedef struct arguments_s
 {
         char *buffer;
-        stack_t **stack;
+        stack_t *stack;
 	int line;
 	int data;
 	char *command;
@@ -66,6 +66,8 @@ void compile_file(arguments_t *args);
 int check_num(char *num);
 int get_command(arguments_t *args);
 void compile_file(arguments_t *args);
+stack_t *push(stack_t **head, const int n);
+size_t pall(const stack_t *h);
 
 
 #endif

@@ -1,5 +1,9 @@
-     test
+push 1
+push 2
+push -3
+ push 4
+push 5 hdehde
+     push 6
 
-push 23
-push -1
-push 13d
+    
+push 7

@@ -5,12 +5,11 @@ void compile_file(arguments_t *args)
 {
 	while (fgets(args->buffer, sizeof(char) * 1024, args->source) != NULL)
 	{
-		printf("buffer %s\n", args->buffer);
-		if (get_command(args) == 0);
+		if (get_command(args) == 0)
 			continue;
-		printf("%s\n", args->command);
 		args->line++;
 	}
+	pall(args->stack);
 }
 
 int get_command(arguments_t *args)
@@ -20,13 +19,15 @@ int get_command(arguments_t *args)
 	args->command = strtok(args->buffer, " \n\t");
 	if (args->command == NULL)
 		return (0);
-	
+
 	if (strcmp(args->command, "push") == 0)
 	{
 		data = strtok(NULL, " \n\t");
-		//return 0 after running push
 		if (check_num(data) == 1)
-			args->data = atoi(data);
+		{
+			push(&(args->stack), atoi(data));
+			return (0);
+		}
 		else
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", args->line);
