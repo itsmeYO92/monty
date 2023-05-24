@@ -74,6 +74,7 @@ void (*get_opcode(arguments_t *args))(stack_t **, unsigned int);
 void free_stack(stack_t *head);
 void nop(stack_t **stack, unsigned int n);
 void swap(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
 
 
 #endif
