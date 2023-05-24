@@ -70,7 +70,7 @@ void sub(stack_t **stack, unsigned int line_number)
 }
 
 
-void div(stack_t **stack, unsigned int line_number)
+void _div(stack_t **stack, unsigned int line_number)
 {
 	stack_t *current;
 	int i;
