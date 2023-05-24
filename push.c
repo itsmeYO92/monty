@@ -33,3 +33,23 @@ void pall(stack_t **h, unsigned int line_number)
 		current = current->next;
 	}
 }
+
+/**
+ * pint - pint function
+ * @stack: stack
+ * @line_number: line number
+ * Return: nothing
+ */
+void pint(stack_t **stack, unsigned int line_number)
+{
+	stack_t	*current;
+
+	current = *stack;
+	if (!current)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		free_stack(*stack);
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", current->n);
+}
