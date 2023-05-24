@@ -69,3 +69,53 @@ void sub(stack_t **stack, unsigned int line_number)
 	(*stack)->n = (*stack)->n - i;
 }
 
+
+void div(stack_t **stack, unsigned int line_number)
+{
+	stack_t *current;
+	int i;
+
+	if (stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't sub, stack too short", line_number);
+		free_stack(*stack);
+		exit(EXIT_FAILURE);
+	}
+
+	i = 0;
+	current = *stack;
+	if (current == NULL || current->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't sub, stack too short", line_number);
+		free_stack(*stack);
+		exit(EXIT_FAILURE);
+	}
+	i = current->n;
+	pop(stack, line_number);
+	(*stack)->n = (*stack)->n / i;
+}
+
+void mul(stack_t **stack, unsigned int line_number)
+{
+	stack_t *current;
+	int i;
+
+	if (stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't sub, stack too short", line_number);
+		free_stack(*stack);
+		exit(EXIT_FAILURE);
+	}
+
+	i = 0;
+	current = *stack;
+	if (current == NULL || current->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't sub, stack too short", line_number);
+		free_stack(*stack);
+		exit(EXIT_FAILURE);
+	}
+	i = current->n;
+	pop(stack, line_number);
+	(*stack)->n = (*stack)->n * i;
+}
