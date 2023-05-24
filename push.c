@@ -53,3 +53,30 @@ void pint(stack_t **stack, unsigned int line_number)
 	}
 	printf("%d\n", current->n);
 }
+
+/**
+ * pop - Deletes a node at a given index in a doubly linked list.
+ *
+ * @head: A double pointer to the head of the doubly linked list.
+ * @index: The index of the node to be deleted.
+ *
+ * Return: nothing.
+ */
+void pop(stack_t **head, unsigned int index)
+{
+	stack_t *current;
+
+	(void)(index);
+	if (!head || !(*head))
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack", index);
+		free(*head);
+		exit(EXIT_FAILURE);
+	}
+	current = (*head)->next;
+	free(*head);
+	if (current)
+		current->prev = NULL;
+	*head = current;
+}
+

@@ -69,6 +69,7 @@ void compile_file(arguments_t *args);
 stack_t *push(stack_t **head, const int n);
 void pall(stack_t **h, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **head, unsigned int index);
 void (*get_opcode(arguments_t *args))(stack_t **, unsigned int);
 void free_stack(stack_t *head);
 
