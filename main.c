@@ -8,6 +8,8 @@ int main(int ac, char **av)
 	precheck_args(args);
 	compile_file(args);
 	printf("done");
+	free(args->buffer);
+	fclose(args->source);
 	free(args);
 	return (EXIT_SUCCESS);
 }

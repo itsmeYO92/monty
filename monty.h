@@ -62,6 +62,7 @@ typedef struct arguments_s
 
 arguments_t *init_args(arguments_t *args, int ac, char **av);
 int precheck_args(arguments_t *args);
+void compile_file(arguments_t *args);
 
 
 #endif
