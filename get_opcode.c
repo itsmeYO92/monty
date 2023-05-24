@@ -18,6 +18,6 @@ void (*get_opcode(arguments_t *args))(stack_t **, unsigned int)
 		i++;
 	}
 	fprintf(stderr, "L%d: unknown instruction %s\n", args->line, args->command);
-//	free_stack(*stack);
+	free_stack(args->stack);
 	exit(EXIT_FAILURE);
 }

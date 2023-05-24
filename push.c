@@ -23,6 +23,7 @@ void pall(stack_t **h, unsigned int line_number)
 {
 	stack_t *current;
 
+	(void)(line_number);
 	if (!h || *h == NULL)
 		return;
 	current = *h;
