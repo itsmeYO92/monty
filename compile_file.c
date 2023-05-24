@@ -6,20 +6,25 @@ void compile_file(arguments_t *args)
 	while (fgets(args->buffer, sizeof(char) * 1024, args->source) != NULL)
 	{
 		printf("buffer %s\n", args->buffer);
-		get_command(args);
+		if (get_command(args) == 0);
+			continue;
 		printf("%s\n", args->command);
 		args->line++;
 	}
 }
 
-void get_command(arguments_t *args)
+int get_command(arguments_t *args)
 {
 	char *data;
 
 	args->command = strtok(args->buffer, " \n\t");
+	if (args->command == NULL)
+		return (0);
+	
 	if (strcmp(args->command, "push") == 0)
 	{
 		data = strtok(NULL, " \n\t");
+		//return 0 after running push
 		if (check_num(data) == 1)
 			args->data = atoi(data);
 		else
@@ -31,6 +36,7 @@ void get_command(arguments_t *args)
 			exit(EXIT_FAILURE);
 		}
 	}
+	return (1);
 }
 
 

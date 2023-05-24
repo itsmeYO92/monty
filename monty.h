@@ -64,7 +64,7 @@ arguments_t *init_args(arguments_t *args, int ac, char **av);
 int precheck_args(arguments_t *args);
 void compile_file(arguments_t *args);
 int check_num(char *num);
-void get_command(arguments_t *args);
+int get_command(arguments_t *args);
 void compile_file(arguments_t *args);
 
 
