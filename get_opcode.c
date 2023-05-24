@@ -8,6 +8,7 @@ void (*get_opcode(arguments_t *args))(stack_t **, unsigned int)
 	instruction_t ops[] = {
 		{"pall", pall},
 		{"nop", nop},
+		{"sub", sub},
 		{"add", add},
 		{"swap", swap},
 		{"pop", pop},
