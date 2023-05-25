@@ -3,7 +3,7 @@
 stack_t *push(stack_t **head, const int n)
 {
 
-	stack_t *new = malloc(sizeof(stack_t));
+	stack_t *new = malloc(sizeof(stack_t *));
 
 	if (!new)
 		return (NULL);
